@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/premium.css">
 <noscript><style>#lock,#intro{display:none}#main[hidden]{display:block!important}body.locked{overflow:auto}</style></noscript>
 </head>
 <body class="locked">
@@ -94,12 +95,16 @@
     <figure class="frame">
       <div class="portrait"><img src="assets/images/ambrose-02-red.jpg" alt="Ambrose in a red bomber jacket and matching trousers" width="675" height="1080"></div>
       <span class="sheen" aria-hidden="true"></span>
+      <div class="beam" id="beam" aria-hidden="true"></div>
       <i class="c ca"></i><i class="c cb"></i><i class="c cc"></i><i class="c cd"></i>
     </figure>
     <div class="hero-text">
       <span class="sn">The celebration</span>
-      <h2 data-split data-base=".4">Twenty-one sparks. One wish.</h2>
-      <p class="sub">Light every spark, then make a wish for the year ahead.</p>
+      <h2 data-split data-base=".4">The spotlight is yours.</h2>
+      <p class="sub">Twenty-one years. One evening that belongs entirely to you.</p>
+      <div class="yr" id="yr" role="img" aria-label="From 2005 to 2026: twenty-one years">
+        <span class="yr-a" aria-hidden="true">2005</span><span class="yr-l" aria-hidden="true"></span><span class="yr-n" id="yrN" aria-hidden="true">2005</span>
+      </div>
       <div class="sparks" id="sparks" role="group" aria-label="Twenty-one sparks"></div>
       <p class="spark-count" id="sparkCount" role="status" aria-live="polite">0 of 21 lit</p>
       <div class="hero-btns">
@@ -171,12 +176,14 @@
   </section>
 
   <section id="final" class="final">
-    <div class="glow" aria-hidden="true"></div>
-    <svg class="ring" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="190" pathLength="1"/></svg>
     <div class="final-in">
-      <h2 data-split>Happy 21st, brother.</h2>
-      <p class="f-sub f-r" style="--d:1.6s">2019 to forever.</p>
-      <p class="f-q f-r" style="--d:2.6s">Your brotherhood is appreciated. Your presence is valued. Your victories will always be celebrated.</p>
+      <div class="f-circle">
+        <div class="glow" aria-hidden="true"></div>
+        <svg class="ring" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="190" pathLength="1"/></svg>
+        <h2 data-split>Happy 21st, brother.</h2>
+        <p class="f-sub f-r" style="--d:1.6s">2019 to forever.</p>
+        <p class="f-q f-r" style="--d:2.6s">Your brotherhood is appreciated. Your presence is valued. Your victories will always be celebrated.</p>
+      </div>
       <div class="f-btns f-r" style="--d:3.6s">
         <button id="fwAgain" class="gold-btn" type="button">Launch the fireworks</button>
         <button id="replay" class="ghost" type="button">Experience it again</button>
@@ -195,5 +202,6 @@
 
 <audio id="song" src="assets/audio/birthday.m4a" preload="none" loop></audio>
 <script src="js/script.js"></script>
+<script src="js/extras.js"></script>
 </body>
 </html>

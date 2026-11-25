@@ -1,0 +1,29 @@
+/* premium.css — loads AFTER style.css. Delete this file's <link> to undo everything. */
+
+/* 1. Hero: retire the "21 sparks" game, add spotlight + year counter */
+.sparks,.spark-count,.hero-btns{display:none!important}
+.frame{touch-action:pan-y}
+.beam{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:1;transition:opacity 1.8s ease;
+background:radial-gradient(circle at var(--bx,12%) var(--by,40%),transparent 0,transparent var(--br,12%),rgba(6,7,10,.95) calc(var(--br,12%) + 24%))}
+.beam.done{opacity:0}
+.yr{display:flex;align-items:center;justify-content:center;gap:1rem;margin:2rem 0 .4rem;font:500 clamp(2rem,9vw,3.2rem)/1 "Cormorant Garamond",Georgia,serif;font-variant-numeric:tabular-nums;color:var(--ivory,#f3ecdc)}
+.yr-a{opacity:.55}
+.yr-l{flex:0 0 clamp(44px,15vw,96px);height:1px;background:linear-gradient(90deg,var(--bronze,#8d6b3d),var(--gold,#cdaa62));transform:scaleX(0);transform-origin:0 50%;transition:transform 2.6s ease}
+.yr.go .yr-l{transform:scaleX(1)}
+.yr.done .yr-n{color:var(--gold2,#e8d3a0);text-shadow:0 0 22px rgba(205,170,98,.45);transition:color 1s,text-shadow 1s}
+
+/* 2. Finale: ring, glow and text now share one box, so everything fits inside the circle */
+.final{--D:min(88vw,540px)}
+.final-in{display:flex;flex-direction:column;align-items:center}
+.f-circle{position:relative;width:var(--D);aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 calc(var(--D)*.15)}
+.f-circle .ring{position:absolute;left:0;top:0;width:100%;height:100%;transform:rotate(-90deg)}
+.final h2{font-size:calc(var(--D)*.105);max-width:none;line-height:1.05;letter-spacing:.02em}
+.final .f-sub{font-size:max(.72rem,calc(var(--D)*.03));letter-spacing:.3em;margin:.9rem 0 1rem}
+.final .f-q{font-size:max(1.02rem,calc(var(--D)*.047));line-height:1.4;max-width:none}
+.final .f-btns{margin-top:2.4rem}
+
+/* 3. Low-end phones (Samsung A04 class): switch off the expensive extras */
+.lowend .grain,.lowend .cur,.lowend .fl{display:none!important}
+.lowend *{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.lowend .rays,.lowend .big21,.lowend .glow{animation:none!important}
+.lowend .rays{opacity:.75}
